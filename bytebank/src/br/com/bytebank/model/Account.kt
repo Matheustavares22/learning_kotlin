@@ -19,14 +19,14 @@ class Account(
 
     fun deposit(depositValue: Double) {
         when {
-            accountUtil.valueIsValid(depositValue) -> this.balance += depositValue
+            accountUtil.valueIsValid(value = depositValue) -> this.balance += depositValue
         }
     }
 
     fun withdrawal(withdrawalValue: Double): Boolean {
         when {
-            accountUtil.valueIsValid(withdrawalValue) &&
-                    accountUtil.balanceIsSufficient(this.balance, withdrawalValue) -> {
+            accountUtil.valueIsValid(value = withdrawalValue) &&
+                    accountUtil.balanceIsSufficient(balance = this.balance, value = withdrawalValue) -> {
                 this.balance -= withdrawalValue
                 return true
             }
@@ -37,8 +37,8 @@ class Account(
 
     fun transfer(account: Account, transferredValue: Double): Boolean {
         when {
-            withdrawal(transferredValue) -> {
-                account.deposit(transferredValue)
+            withdrawal(withdrawalValue = transferredValue) -> {
+                account.deposit(depositValue = transferredValue)
                 return true
             }
         }
