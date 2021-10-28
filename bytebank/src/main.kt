@@ -1,54 +1,20 @@
+import br.com.bytebank.model.Account
+
 fun main() {
-    println("Welcome to ByteBank")
-    println("=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+    println(message = "Welcome to ByteBank")
+    println(message = "=-=-=-=-=-=-=-=-=-=-=-=-=-=")
 
-    val holder = "Matheus"
-    val accountNumber = 1000
-    var balance = 0.0
+    val accountMatheus = Account(holder = "Matheus", accountNumber = 2028)
+    accountMatheus.deposit(depositValue = 100.0)
 
-    balance += 100
+    val accountKamila = Account(holder = "Kamila", accountNumber = 2029)
+    accountMatheus.transfer(account = accountKamila, transferredValue = 80.0)
 
-    println("holder: $holder")
-    println("Account Number: $accountNumber")
-    println("Balance: $balance")
+    println(message = accountMatheus.holder)
+    println(message = accountMatheus.balance)
 
-    //testConditions(balance)
-    //loops()
-    println("=-=-=-=-=-=-=-=-=-=-=-=-=-=")
-}
+    println(message = accountKamila.holder)
+    println(message = accountKamila.balance)
 
-private fun loops() {
-//    var i = 0
-//    while (i < 5) {
-//        i++
-//    }
-    for (i in 1..100) {
-        println("i $i")
-        for (j in 1..100) {
-            println("j $j")
-            if (j == 5) break
-        }
-    }
-}
-
-private fun testConditions(balance: Double) {
-    // other languages if conditional
-//    if (balance > 0.0){
-//        println("true")
-//    } else if(balance == 0.0){
-//        println("neutral account")
-//    } else {
-//        println("negative account")
-//    }
-
-    // kotlin conditional
-    when {
-        balance > 0.0 -> println("true")
-        balance == 0.0 -> println("neutral account")
-        else -> println("negative account")
-    }
-
-//    when (i) {
-//        4 -> break
-//    }
+    println(message = "=-=-=-=-=-=-=-=-=-=-=-=-=-=")
 }
