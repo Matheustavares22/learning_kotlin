@@ -2,7 +2,7 @@ package br.com.bytebank.model
 
 import br.com.bytebank.model.util.AccountUtil
 //(๑˃ᴗ˂)ﻭ
-open class Account(
+abstract class Account(
     val holder: String,
     val accountNumber: Int
 ) {

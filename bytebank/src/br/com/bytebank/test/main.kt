@@ -40,16 +40,15 @@ private fun accountsTest() {
 
     println(currentAccountAlex.balance)
     println(savingsAccountTalytha.balance)
-
-
 }
 
 private fun testFeaturesEmployee() {
-    val employeeAlex: Employee = Employee(
-        name = "Alex",
-        cpf = "46609916622",
-        salary = 2400.0
-    )
+    // not possible because it is abstract class
+//    val employeeAlex: Employee = Employee(
+//        name = "Alex",
+//        cpf = "46609916622",
+//        salary = 2400.0
+//    )
 
     val analystMargarida: Employee = Analyst(
         name = "Margarida",
@@ -73,7 +72,7 @@ private fun testFeaturesEmployee() {
     )
 
     val calc = BonusCalculator()
-    calc.register(employeeAlex)
+//    calc.register(employeeAlex)
     calc.register(managerFran)
     calc.register(directorMatheus)
     calc.register(analystMargarida)
