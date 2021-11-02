@@ -1,6 +1,5 @@
-package br.com.bytebank.testkotlin
 
-import br.com.bytebank.model.Account
+package br.com.bytebank.testkotlin
 
 fun testloops() {
 //    var i = 0

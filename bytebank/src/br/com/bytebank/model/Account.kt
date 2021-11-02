@@ -1,13 +1,13 @@
 package br.com.bytebank.model
 
 import br.com.bytebank.model.util.AccountUtil
-
-class Account(
+//(๑˃ᴗ˂)ﻭ
+open class Account(
     val holder: String,
     val accountNumber: Int
 ) {
     var balance: Double = 0.0
-    private var accountUtil = AccountUtil()
+    var accountUtil = AccountUtil()
         private set
 
     init {
@@ -23,7 +23,7 @@ class Account(
         }
     }
 
-    fun withdrawal(withdrawalValue: Double): Boolean {
+    open fun withdrawal(withdrawalValue: Double): Boolean {
         when {
             accountUtil.valueIsValid(value = withdrawalValue) &&
                     accountUtil.balanceIsSufficient(balance = this.balance, value = withdrawalValue) -> {
